@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Sample {
+  id         Int      @id @default(autoincrement())
+  date       DateTime @default(dbgenerated("(CURRENT_DATE)")) @db.Date
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  createdAt2 DateTime @default(dbgenerated("NOW()")) @db.DateTime
+  updatedAt2 DateTime @default(dbgenerated("NOW() ON UPDATE NOW()")) @db.DateTime
+}
+
+model Required {
+  id               Int      @id @default(autoincrement())
+  requiredDate     DateTime @db.Date
+  requiredDateTime DateTime
+}

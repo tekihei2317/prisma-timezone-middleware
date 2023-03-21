@@ -1,0 +1,20 @@
+-- CreateTable
+CREATE TABLE `Sample` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `date` DATE NOT NULL DEFAULT (CURRENT_DATE),
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+    `createdAt2` DATETIME NOT NULL DEFAULT NOW(),
+    `updatedAt2` DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW(),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Required` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `requiredDate` DATE NOT NULL,
+    `requiredDateTime` DATETIME(3) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

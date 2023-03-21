@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "ts-node scripts/main.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "prisma": "^4.11.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@prisma/client": "4.11.0"
+  }
+}
